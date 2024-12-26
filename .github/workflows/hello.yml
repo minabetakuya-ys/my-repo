@@ -1,8 +1,9 @@
-name: Hello
-on: push
+name: Schedule
+on:
+  schedule:
+    - cron: '*/15 * * * *'
 jobs:
-  hello:
+  run:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Hello, world"
-      - uses: actions/checkout@v4
+      - run: date
